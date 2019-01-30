@@ -1,11 +1,12 @@
 module.exports = {
-  success,
-  fail,
-  repair
+  success: item => {},
+  fail: item => {},
+  repair: item => {
+    // const newItem = { ...item, durability: 100 };
+    // return newItem;
+    if (!item.hasOwnProperty('durability')) {
+      throw new Error('no durability on item');
+    }
+    return { ...item, durability: 100 };
+  }
 };
-
-const success = item => {};
-
-const fail = item => {};
-
-const repair = item => {};

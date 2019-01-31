@@ -10,7 +10,7 @@ const levels = [
   '+8',
   '+9',
   '+10',
-  '1+1',
+  '+11',
   '+12',
   '+13',
   '+14',
@@ -34,7 +34,27 @@ module.exports = {
       name: `[${levels[levelIndex]}] ${item.name}`
     };
   },
-  fail: item => {},
+  fail: item => {
+    const enhancement = item.enhancement;
+    const levelIndex =
+      enhancement === 'DUO' || enhancement === 'TRI' || enhancement === 'TET'
+        ? levels.indexOf(enhancement) - 1
+        : levels.indexOf(enhancement);
+    const getDurability = item => {
+      if (levels.indexOf(enhancement) > 14) {
+        return item.durability - 10 < 0 ? 0 : item.durability - 10;
+      } else {
+        return item.durability - 5 < 20 ? 20 : item.durability - 5;
+      }
+    };
+
+    return {
+      ...item,
+      name: `[${levels[levelIndex]}] ${item.name}`,
+      durability: getDurability(item),
+      enhancement: levels[levelIndex]
+    };
+  },
   repair: item => {
     if (!item.hasOwnProperty('durability')) {
       throw new Error('no durability on item');

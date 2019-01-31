@@ -35,6 +35,7 @@ describe('the enhancer object', () => {
       expect(e.fail(items[3].enhancement)).toEqual('+10'); // enhancement level: +10
     });
     test('returns the item name that reflects the enhancement change if the enhancement was effected', () => {
+      expect(e.fail(items[2]).name).toEqual('[PRI] Long Bow');
       expect(e.fail(items[5]).name).toEqual('[TRI] Steel Armor');
       expect(e.fail(items[7]).name).toEqual('[DUO] Steel Knife');
       expect(e.fail(items[8]).name).toEqual('[PRI] Crossbow');

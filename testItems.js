@@ -26,38 +26,38 @@ module.exports = {
     {
       name: 'Elvan Sword',
       type: 'weapon',
-      durability: 0,
+      durability: 80,
       enhancement: '0'
     },
     {
       name: 'Elvan Shield',
       type: 'armor',
-      durability: 0,
+      durability: 5,
       enhancement: 'PEN'
     },
     {
       name: 'Long Bow',
       type: 'weapon',
-      durability: 0,
+      durability: 25,
       enhancement: '+15'
     },
     {
       name: 'Iron Mace',
       type: 'weapon',
-      durability: 0,
-      enhancement: '0'
+      durability: 60,
+      enhancement: '+10'
     },
     {
       name: 'Elvan Armor',
       type: 'weapon',
-      durability: 0,
-      enhancement: '0'
+      durability: 20,
+      enhancement: 'PRI'
     },
     {
       name: 'Steel Armor',
       type: 'armor',
-      durability: 0,
-      enhancement: '0'
+      durability: 5,
+      enhancement: 'TET'
     }
   ]
 };

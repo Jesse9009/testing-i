@@ -18,7 +18,23 @@ describe('the enhancer object', () => {
     });
   });
 
-  describe('the fail function', () => {});
+  describe('the fail function', () => {
+    test('returns the durability of an item decreased by 5, but not lower than 20, if enhancement is between +0 and +14', () => {
+      expect(e.fail(items[0].durability)).toEqual(75); // enhancement level: +0
+      expect(e.fail(items[3].durability)).toEqual(55); // enhancement level: +10
+      expect(e.fail(items[4].durability)).toEqual(20); // enhancement level: +0
+    });
+    test('returns the durability of an item decreased by 10, but not lower than 0, if enhancement is between +15 and TET', () => {
+      expect(e.fail(items[2].durability)).toEqual(15); // enhancement level: +15
+      expect(e.fail(items[5].durability)).toEqual(0); // enhancement level: TET
+    });
+    test('returns enhancement level decreased by 1 if current enhancement level is DUO, TRI, or TET', () => {
+      expect(e.fail(items[5].enhancement)).toEqual('TRI'); // enhancement level: TET
+      expect(e.fail(items[6].enhancement)).toEqual('PRI'); // enhancement level: PRI
+      expect(e.fail(items[1].enhancement)).toEqual('PEN'); // enhancement level: PEN
+      expect(e.fail(items[3].enhancement)).toEqual('+10'); // enhancement level: +10
+    });
+  });
 
   describe('the repair function', () => {
     test('returns a new item with the durability restored to 100', () => {

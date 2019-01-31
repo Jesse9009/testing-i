@@ -8,34 +8,14 @@ describe('the enhancer object', () => {
   describe('the success function', () => {
     test('returns a new item with its enhacement increased by 1', () => {
       expect(e.success(items[0]).enhancement).toEqual('+1');
+      expect(e.success(items[1]).enhancement).toEqual('PEN');
+      expect(e.success(items[2]).enhancement).toEqual('PRI');
     });
-    // test('returns a new item with its enhacement increased by 1 and new enhacement level reflected in the name', () => {
-    //   items.map(item => {
-    //     const levelIndex =
-    //       item.enhancement !== 'PEN'
-    //         ? levels.indexOf(item.enhancement) + 1
-    //         : levels.indexOf(item.enhancement);
-    //     expect(e.success(item)).toEqual({
-    //       ...item,
-    //       enhancement: levels[levelIndex],
-    //       name: `[${levels[levelIndex]}] ${item.name}`
-    //     });
-    //   });
-    // });
-    // test('return new item with the new enhacement level reflected in the name', () => {
-    //   items.map(item => {
-    //     expect(e.success(item)).toEqual({
-    //       ...item,
-    //       name: `[${
-    //         levels[
-    //           item.enhancement !== 'PEN'
-    //             ? levels.indexOf(item.enhancement) + 1
-    //             : levels.indexOf(item.enhancement)
-    //         ]
-    //       }] ${item.name}`
-    //     });
-    //   });
-    // });
+    test('return new item with the new enhacement level reflected in the name', () => {
+      expect(e.success(items[0]).name).toEqual('[+1] Elvan Sword');
+      expect(e.success(items[1]).name).toEqual('[PEN] Elvan Shield');
+      expect(e.success(items[2]).name).toEqual('[PRI] Long Bow');
+    });
   });
 
   describe('the fail function', () => {});

@@ -33,13 +33,13 @@ module.exports = {
       name: 'Elvan Shield',
       type: 'armor',
       durability: 0,
-      enhancement: '0'
+      enhancement: 'PEN'
     },
     {
       name: 'Long Bow',
       type: 'weapon',
       durability: 0,
-      enhancement: '0'
+      enhancement: '+15'
     },
     {
       name: 'Iron Mace',

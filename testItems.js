@@ -51,13 +51,31 @@ module.exports = {
       name: 'Elvan Armor',
       type: 'weapon',
       durability: 20,
-      enhancement: 'PRI'
+      enhancement: '+0'
     },
     {
       name: 'Steel Armor',
       type: 'armor',
       durability: 5,
       enhancement: 'TET'
+    },
+    {
+      name: 'Copper Armor',
+      type: 'armor',
+      durability: 50,
+      enhancement: 'PRI'
+    },
+    {
+      name: 'Steel Knife',
+      type: 'weapon',
+      durability: 5,
+      enhancement: 'TRI'
+    },
+    {
+      name: 'Crossbow',
+      type: 'weapon ',
+      durability: 50,
+      enhancement: 'DUO'
     }
   ]
 };
